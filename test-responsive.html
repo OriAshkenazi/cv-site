@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Responsive Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-frame { border: 2px solid #333; margin: 20px 0; }
+        .test-label { font-weight: bold; margin: 10px 0; }
+        iframe { border: none; width: 100%; }
+        .desktop { height: 800px; }
+        .tablet { height: 1024px; }
+        .mobile { height: 667px; }
+    </style>
+</head>
+<body>
+    <h1>CV Responsive Design Test</h1>
+    
+    <div class="test-label">Desktop View (1200px)</div>
+    <div class="test-frame">
+        <iframe src="index.html" width="1200" class="desktop"></iframe>
+    </div>
+    
+    <div class="test-label">Tablet View (768px)</div>
+    <div class="test-frame">
+        <iframe src="index.html" width="768" class="tablet"></iframe>
+    </div>
+    
+    <div class="test-label">Mobile View (375px)</div>
+    <div class="test-frame">
+        <iframe src="index.html" width="375" class="mobile"></iframe>
+    </div>
+    
+    <div class="test-label">Print Preview Test</div>
+    <p><strong>Instructions:</strong> Open <a href="index.html" target="_blank">index.html</a> and press Ctrl/Cmd + P to test A4 print layout</p>
+    
+    <div class="test-label">Live Site</div>
+    <p><strong>Domain:</strong> <a href="http://cv.oriashkenazi.com" target="_blank">cv.oriashkenazi.com</a> (check in 10-15 minutes)</p>
+</body>
+</html>

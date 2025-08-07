@@ -89,30 +89,38 @@ body {
 }
 
 .title-section h2 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 12px;
-    opacity: 0.95;
-    line-height: 1.3;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    opacity: 1;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
 }
 
-.title-section .company {
-    font-size: 1.6rem;
-    font-weight: 800;
+.expertise {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+}
+
+.expertise-tag {
     background: rgba(255,255,255,0.25);
-    padding: 12px 20px;
-    border-radius: 12px;
+    padding: 6px 14px;
+    border-radius: 20px;
     backdrop-filter: blur(15px);
-    border: 2px solid rgba(255,255,255,0.3);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
-.title-section .company:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+.expertise-tag:hover {
+    background: rgba(255,255,255,0.35);
+    transform: translateX(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 /* Content Layout */
@@ -239,6 +247,13 @@ a:hover {
     transition: all 0.3s ease;
 }
 
+.current-job {
+    background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+    background: #fff3e0;
+    border: 2px solid #fdcb6e;
+    box-shadow: 0 4px 16px rgba(253, 203, 110, 0.15);
+}
+
 .experience-item:hover, .education-item:hover {
     border-color: #fdcb6e;
     box-shadow: 0 4px 16px rgba(253, 203, 110, 0.2);
@@ -330,11 +345,15 @@ a:hover {
     }
     
     .title-section h2 {
-        font-size: 1.2rem;
+        font-size: 1.6rem;
     }
     
-    .title-section .company {
-        font-size: 1.4rem;
+    .expertise {
+        align-items: center;
+    }
+    
+    .expertise-tag {
+        font-size: 0.85rem;
     }
     
     .cv-content {
@@ -372,12 +391,12 @@ a:hover {
     }
     
     .title-section h2 {
-        font-size: 1.1rem;
+        font-size: 1.4rem;
     }
     
-    .title-section .company {
-        font-size: 1.2rem;
-        padding: 6px 12px;
+    .expertise-tag {
+        font-size: 0.8rem;
+        padding: 5px 12px;
     }
     
     .cv-content {

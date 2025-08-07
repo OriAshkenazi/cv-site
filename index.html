@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>Ori Ashkenazi - Civil Engineer | VDC & BIM Specialist</title>
     <meta name="description" content="Ori Ashkenazi - Civil Engineer specializing in VDC and BIM at Shapir LTD. Expert in Revit, AutoCAD, Python, and innovative construction technologies.">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=1.2">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👷‍♂️</text></svg>">
 </head>
 <body>
@@ -182,5 +185,13 @@
             </div>
         </div>
     </div>
+    
+    <script>
+    // Force reload CSS if version mismatch (optional)
+    if (sessionStorage.getItem('cv-version') !== '1.2') {
+        sessionStorage.setItem('cv-version', '1.2');
+        location.reload(true);
+    }
+    </script>
 </body>
 </html>

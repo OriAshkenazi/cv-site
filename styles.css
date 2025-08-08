@@ -667,31 +667,26 @@ a:focus {
 /* A4 Print Styles - SINGLE PAGE CONSTRAINT */
 @media print {
     @page {
-        size: A4;
-        margin: 0.4in;
-    }
-    
-    @page :first {
-        margin-top: 0.4in;
-    }
-    
-    @page :left {
-        margin-left: 0.4in;
-    }
-    
-    @page :right {
-        margin-right: 0.4in;
+        size: A4 portrait;
+        margin: 0.3in 0.4in;
     }
     
     * {
         -webkit-print-color-adjust: exact !important;
         color-adjust: exact !important;
+        box-sizing: border-box !important;
+        page-break-inside: avoid !important;
     }
     
-    html, body {
-        font-family: 'Times New Roman', serif;
-        font-size: 8px;
-        line-height: 1.1;
+    html {
+        font-size: 7px !important;
+        height: auto !important;
+    }
+    
+    body {
+        font-family: 'Helvetica Neue', 'Segoe UI', 'Roboto', 'Inter', system-ui, sans-serif !important;
+        font-size: 7px !important;
+        line-height: 1.05 !important;
         color: #000 !important;
         background: white !important;
         margin: 0 !important;
@@ -699,6 +694,11 @@ a:focus {
         width: 100% !important;
         height: auto !important;
         overflow: visible !important;
+        font-weight: 400 !important;
+    }
+    
+    body::before {
+        display: none !important;
     }
     
     .cv-container {
@@ -715,74 +715,102 @@ a:focus {
         transform: none !important;
         animation: none !important;
         opacity: 1 !important;
+        display: block !important;
     }
     
     .cv-header {
-        background: #f5f5f5 !important;
+        background: linear-gradient(135deg, #f8f9fa, #e9ecef) !important;
         color: #000 !important;
-        padding: 12px 0;
-        margin-bottom: 8px;
-        border-radius: 0;
-        border-bottom: 1px solid #000;
+        padding: 8px 0 !important;
+        margin-bottom: 6px !important;
+        border-radius: 0 !important;
+        border-bottom: 2px solid #333 !important;
+        position: relative !important;
+    }
+    
+    .cv-header::before {
+        display: none !important;
     }
     
     .cv-header::after {
-        display: none;
+        display: none !important;
     }
     
     .header-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 20px;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: flex-start !important;
+        gap: 15px !important;
     }
     
     .contact-info h1 {
-        font-size: 16px;
-        font-weight: bold;
-        margin-bottom: 3px;
+        font-size: 14px !important;
+        font-weight: 700 !important;
+        margin-bottom: 2px !important;
         color: #000 !important;
+        letter-spacing: 0.5px !important;
     }
     
     .contact-details {
-        gap: 1px;
+        gap: 1px !important;
+        display: flex !important;
+        flex-direction: column !important;
     }
     
     .contact-item {
-        font-size: 7.5px;
+        font-size: 6px !important;
         color: #000 !important;
-        text-decoration: none;
-        display: block;
+        text-decoration: none !important;
+        display: block !important;
+        margin-bottom: 1px !important;
+    }
+    
+    .contact-item::after {
+        content: " (" attr(href) ")" !important;
+        font-size: 5px !important;
+        color: #666 !important;
     }
     
     .contact-item svg {
-        display: none;
+        display: none !important;
     }
     
     .title-section {
-        text-align: right;
+        text-align: right !important;
+        flex: 1 !important;
     }
     
     .title-section h2 {
-        font-size: 11px;
-        margin-bottom: 2px;
+        font-size: 10px !important;
+        margin-bottom: 2px !important;
         color: #000 !important;
+        font-weight: 600 !important;
     }
     
-    .title-section .company {
-        font-size: 10px;
-        background: none !important;
-        padding: 0;
-        color: #000 !important;
-        font-weight: bold;
+    .expertise {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 3px !important;
+        justify-content: flex-end !important;
+    }
+    
+    .expertise-tag {
+        background: #333 !important;
+        color: white !important;
+        padding: 1px 4px !important;
+        border-radius: 3px !important;
+        font-size: 5px !important;
+        font-weight: 500 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.3px !important;
     }
     
     .cv-content {
         display: grid !important;
         grid-template-columns: 35% 65% !important;
-        gap: 8px !important;
+        gap: 6px !important;
         padding: 0 !important;
-        font-size: 7px !important;
+        font-size: 6px !important;
         height: auto !important;
         page-break-inside: avoid !important;
     }
@@ -791,37 +819,40 @@ a:focus {
         opacity: 1 !important;
         animation: none !important;
         transform: none !important;
+        page-break-inside: avoid !important;
     }
     
     section {
-        margin-bottom: 6px !important;
+        margin-bottom: 4px !important;
         page-break-inside: avoid !important;
     }
     
     h3 {
-        font-size: 9px !important;
-        font-weight: bold !important;
-        margin-bottom: 3px !important;
+        font-size: 8px !important;
+        font-weight: 700 !important;
+        margin-bottom: 2px !important;
         color: #000 !important;
-        border-bottom: 0.5px solid #000 !important;
+        border-bottom: 1px solid #333 !important;
         padding-bottom: 1px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
     }
     
     h3::after {
-        display: none;
+        display: none !important;
     }
     
     h4 {
-        font-size: 8.5px;
-        font-weight: bold;
-        margin-bottom: 2px;
+        font-size: 7px !important;
+        font-weight: 600 !important;
+        margin-bottom: 1px !important;
         color: #000 !important;
     }
     
     p {
-        margin-bottom: 2px !important;
-        font-size: 7px !important;
-        line-height: 1.05 !important;
+        margin-bottom: 1px !important;
+        font-size: 6px !important;
+        line-height: 1.1 !important;
         color: #000 !important;
         text-align: left !important;
     }
@@ -845,10 +876,39 @@ a:focus {
     }
     
     .skill-category {
-        margin-bottom: 6px;
+        margin-bottom: 4px !important;
         background: none !important;
-        padding: 0;
-        border: none;
+        padding: 0 !important;
+        border: none !important;
+    }
+    
+    .skill-level {
+        display: inline !important;
+        background: none !important;
+        color: #000 !important;
+        padding: 0 !important;
+        border: none !important;
+        font-size: 5px !important;
+        font-weight: 600 !important;
+        text-transform: uppercase !important;
+        margin-left: 3px !important;
+    }
+    
+    .skill-level::before {
+        content: "[" !important;
+    }
+    
+    .skill-level::after {
+        content: "]" !important;
+    }
+    
+    .expandable-header .toggle-icon {
+        display: none !important;
+    }
+    
+    .expandable-content {
+        max-height: none !important;
+        overflow: visible !important;
     }
     
     .experience-item, .education-item {
@@ -902,6 +962,14 @@ a:focus {
     a {
         color: #000 !important;
         text-decoration: none !important;
+        font-weight: 500 !important;
+    }
+    
+    a[href]:not(.contact-item)::after {
+        content: " (" attr(href) ")" !important;
+        font-size: 5px !important;
+        color: #666 !important;
+        font-weight: 400 !important;
     }
     
     /* Prevent page breaks */

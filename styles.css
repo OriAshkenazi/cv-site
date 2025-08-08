@@ -671,30 +671,50 @@ a:focus {
         margin: 0.4in;
     }
     
+    @page :first {
+        margin-top: 0.4in;
+    }
+    
+    @page :left {
+        margin-left: 0.4in;
+    }
+    
+    @page :right {
+        margin-right: 0.4in;
+    }
+    
     * {
         -webkit-print-color-adjust: exact !important;
         color-adjust: exact !important;
     }
     
-    body {
+    html, body {
         font-family: 'Times New Roman', serif;
-        font-size: 9px;
-        line-height: 1.2;
+        font-size: 8px;
+        line-height: 1.1;
         color: #000 !important;
         background: white !important;
-        margin: 0;
-        padding: 0;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        overflow: visible !important;
     }
     
     .cv-container {
-        max-width: none;
-        margin: 0;
-        padding: 0;
-        box-shadow: none;
-        border-radius: 0;
+        max-width: none !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
         background: white !important;
-        height: auto;
-        page-break-inside: avoid;
+        height: auto !important;
+        min-height: auto !important;
+        page-break-inside: avoid !important;
+        transform: none !important;
+        animation: none !important;
+        opacity: 1 !important;
     }
     
     .cv-header {
@@ -758,25 +778,33 @@ a:focus {
     }
     
     .cv-content {
-        display: grid;
-        grid-template-columns: 35% 65%;
-        gap: 12px;
-        padding: 0;
-        font-size: 8px;
+        display: grid !important;
+        grid-template-columns: 35% 65% !important;
+        gap: 8px !important;
+        padding: 0 !important;
+        font-size: 7px !important;
+        height: auto !important;
+        page-break-inside: avoid !important;
+    }
+    
+    .left-column, .right-column {
+        opacity: 1 !important;
+        animation: none !important;
+        transform: none !important;
     }
     
     section {
-        margin-bottom: 8px;
-        page-break-inside: avoid;
+        margin-bottom: 6px !important;
+        page-break-inside: avoid !important;
     }
     
     h3 {
-        font-size: 10px;
-        font-weight: bold;
-        margin-bottom: 4px;
+        font-size: 9px !important;
+        font-weight: bold !important;
+        margin-bottom: 3px !important;
         color: #000 !important;
-        border-bottom: 0.5px solid #000;
-        padding-bottom: 1px;
+        border-bottom: 0.5px solid #000 !important;
+        padding-bottom: 1px !important;
     }
     
     h3::after {
@@ -791,11 +819,11 @@ a:focus {
     }
     
     p {
-        margin-bottom: 3px;
-        font-size: 8px;
-        line-height: 1.1;
+        margin-bottom: 2px !important;
+        font-size: 7px !important;
+        line-height: 1.05 !important;
         color: #000 !important;
-        text-align: left;
+        text-align: left !important;
     }
     
     ul {

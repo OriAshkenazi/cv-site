@@ -8,7 +8,7 @@
     <meta http-equiv="Expires" content="0">
     <title>Ori Ashkenazi - Civil Engineer | VDC & BIM Specialist</title>
     <meta name="description" content="Ori Ashkenazi - Civil Engineer specializing in VDC and BIM at Shapir LTD. Expert in Revit, AutoCAD, Python, and innovative construction technologies.">
-    <link rel="stylesheet" href="styles.css?v=2.3&mobile=fixed">
+    <link rel="stylesheet" href="styles.css?v=2.4&mobile=fixed">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👷‍♂️</text></svg>">
 </head>
 <body>
@@ -57,18 +57,22 @@
                 <section class="skills">
                     <h3>Skills</h3>
                     <div class="skill-category">
-                        <h4>Personal Qualities</h4>
-                        <p>Reliable, highly motivated, detail-oriented, adaptive, autodidactic, and a people person.</p>
+                        <h4 class="expandable-header">Personal Qualities <span class="toggle-icon">▼</span></h4>
+                        <div class="expandable-content">
+                            <p>Reliable, highly motivated, detail-oriented, adaptive, autodidactic, and a people person.</p>
+                        </div>
                     </div>
                     
                     <div class="skill-category">
-                        <h4>Technical Software</h4>
-                        <ul>
-                            <li><strong>BIM/CAD:</strong> 2.5+ years experience in Autodesk software (Revit, AutoCAD & F360)</li>
-                            <li><strong>Office Suite:</strong> Advanced Excel, PowerPoint & Word</li>
-                            <li><strong>Programming:</strong> Python & C</li>
-                            <li><strong>AI Integration:</strong> "Best Friends" with ChatGPT and the GPT API</li>
-                        </ul>
+                        <h4 class="expandable-header">Technical Software <span class="toggle-icon">▼</span></h4>
+                        <div class="expandable-content">
+                            <ul>
+                                <li><strong>BIM/CAD:</strong> 2.5+ years experience in Autodesk software (Revit, AutoCAD & F360) <span class="skill-level advanced">Advanced</span></li>
+                                <li><strong>Office Suite:</strong> Advanced Excel, PowerPoint & Word <span class="skill-level advanced">Advanced</span></li>
+                                <li><strong>Programming:</strong> Python & C <span class="skill-level intermediate">Professional</span></li>
+                                <li><strong>AI Integration:</strong> "Best Friends" with ChatGPT and the GPT API <span class="skill-level expert">Expert</span></li>
+                            </ul>
+                        </div>
                     </div>
                     
                     <div class="skill-category">
@@ -192,10 +196,56 @@
     
     <script>
     // Force reload CSS if version mismatch (optional)
-    if (sessionStorage.getItem('cv-version') !== '2.3') {
-        sessionStorage.setItem('cv-version', '2.3');
+    if (sessionStorage.getItem('cv-version') !== '2.4') {
+        sessionStorage.setItem('cv-version', '2.4');
         location.reload(true);
     }
+    
+    // Progressive Disclosure for Mobile
+    document.addEventListener('DOMContentLoaded', function() {
+        const expandableHeaders = document.querySelectorAll('.expandable-header');
+        
+        // Only activate on mobile
+        function isMobile() {
+            return window.innerWidth <= 768;
+        }
+        
+        // Initialize collapsed state on mobile
+        function initializeMobile() {
+            if (isMobile()) {
+                expandableHeaders.forEach(header => {
+                    const content = header.nextElementSibling;
+                    if (content && content.classList.contains('expandable-content')) {
+                        content.classList.add('collapsed');
+                    }
+                });
+            } else {
+                // Remove collapsed state on desktop
+                document.querySelectorAll('.expandable-content').forEach(content => {
+                    content.classList.remove('collapsed');
+                });
+                expandableHeaders.forEach(header => {
+                    header.classList.remove('expanded');
+                });
+            }
+        }
+        
+        expandableHeaders.forEach(header => {
+            header.addEventListener('click', function() {
+                if (!isMobile()) return;
+                
+                const content = this.nextElementSibling;
+                if (content && content.classList.contains('expandable-content')) {
+                    content.classList.toggle('collapsed');
+                    this.classList.toggle('expanded');
+                }
+            });
+        });
+        
+        // Initialize and handle resize
+        initializeMobile();
+        window.addEventListener('resize', initializeMobile);
+    });
     </script>
 </body>
 </html>

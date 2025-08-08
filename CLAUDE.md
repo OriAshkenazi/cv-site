@@ -50,13 +50,15 @@
 - **Color**: Inherit from text color for consistency
 - **Style**: Modern, professional, recognizable
 
-## 🖨️ A4 Print Requirements (CRITICAL)
-- **Single page constraint**: Must fit on one A4 page
-- **No headers/footers**: Use proper `@page` rules
-- **Font sizes**: 7.5px-10px range for content density
-- **Color**: Black text on white background
-- **Layout**: 35% / 65% grid columns
-- **Margins**: 0.4in for printable area
+## 🖨️ A4 Print Requirements (REVISED)
+- **Single page goal**: Aim for single A4 page, accept overflow if needed for readability
+- **No headers/footers**: Use proper `@page` rules and user should disable in browser
+- **Font sizes**: 10px-12px range for actual readability (not 7.5px eye strain)
+- **Color**: Black text on white background, maintain some design elements
+- **Layout**: 35% / 65% grid columns, condensed spacing
+- **Margins**: 0.5in for realistic printable area
+- **Links**: Show URLs after links since paper isn't clickable
+- **Priority**: Readability over cramming everything onto one page
 
 ## 📦 Container & Layout Rules
 - **Desktop**: Centered max-width container with shadows
